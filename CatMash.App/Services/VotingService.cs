@@ -30,9 +30,10 @@ namespace CatMash.App.Services
             return array.Skip(count - 2).Take(2);
         }
 
-        public void Vote(IImage image)
+        public void Vote(string imageId)
         {
-            image.Votes++;
+            var image = _imageService.Images.FirstOrDefault(i => i.Id == imageId);
+            if (image != null) image.Votes++;
         }
     }
 }

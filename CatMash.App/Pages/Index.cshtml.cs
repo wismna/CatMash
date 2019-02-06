@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using CatMash.App.Interfaces;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace CatMash.App.Pages
 {
     public class IndexModel : PageModel
     {
-        public void OnGet()
-        {
+        private readonly IVotingService _votingService;
 
+        public IndexModel(IVotingService votingService)
+        {
+            _votingService = votingService;
+        }
+
+        public void OnPostVote(string id)
+        {
+            _votingService.Vote(id);
         }
     }
 }

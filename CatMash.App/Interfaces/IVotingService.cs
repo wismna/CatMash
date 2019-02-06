@@ -10,6 +10,6 @@ namespace CatMash.App.Interfaces
     {
         IEnumerable<IImage> GetImagesToCompare();
 
-        void Vote(IImage image);
+        void Vote(string imageId);
     }
 }
