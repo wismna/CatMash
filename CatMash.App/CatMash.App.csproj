@@ -5,6 +5,10 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CatMash.API\CatMash.API.csproj" />
+  </ItemGroup>
+
 
 
 </Project>
