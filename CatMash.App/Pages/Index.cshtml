@@ -3,25 +3,27 @@
 @using CatMash.App.Interfaces
 @using CatMash.App.Services
 @inject IImageService ImageService
+@inject IVotingService VotingService
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Cat Mash! @ImageService.Images.Count()</h1>
+    <h1 class="display-4">Cat Mash!</h1>
 </div>
 
 <div class="container-fluid">
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="btn btn-primary">Vote for me!</a>
-        </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <a href="#" class="btn btn-primary">Vote for me!</a>
-        </div>
+    <div class="row">
+        @foreach (var image in VotingService.GetImagesToCompare())
+        {
+            <div class="col">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="@image.Url" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="#" class="btn btn-primary">Vote for me!</a>
+                    </div>
+                </div>
+            </div>
+        }
     </div>
 </div>
