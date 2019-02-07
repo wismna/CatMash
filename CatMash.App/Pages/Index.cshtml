@@ -13,11 +13,11 @@
 
 <div class="container-fluid">
     <form asp-page-handler="vote" method="post">
-        <div class="row">
+        <div class="row text-center">
             @foreach (var image in VotingService.GetImagesToCompare())
             {
                 <div class="col">
-                    <div class="card text-center" style="width: 18rem;">
+                    <div class="card" style="width: 18rem;">
                         <img src="@image.Url" class="card-img-top" alt="...">
                         <div class="card-body">
                             <button class="btn btn-primary">Vote for me!</button>

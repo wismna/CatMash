@@ -1,0 +1,23 @@
+﻿@page
+@model CatMash.App.Pages.ResultsModel
+@{
+    ViewData["Title"] = "Results";
+}
+
+<h1>Voting Results</h1>
+
+@foreach (var image in Model.Images)
+{
+    <div class="row text-center">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src="@image.Url" class="card-img-top" alt="...">
+            </div>
+        </div>
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                Votes: @image.Votes
+            </div>
+        </div>
+    </div>
+}
