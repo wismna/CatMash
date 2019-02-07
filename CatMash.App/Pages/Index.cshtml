@@ -12,20 +12,20 @@
 </div>
 
 <div class="container-fluid">
-    <form asp-page-handler="vote" method="post">
-        <div class="row text-center">
+        <div class="card-deck text-center">
             @foreach (var image in VotingService.GetImagesToCompare())
             {
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
                         <img src="@image.Url" class="card-img-top" alt="...">
-                        <div class="card-body">
+                    </div>
+                    <div class="card-footer">
+                        <form asp-page-handler="vote" method="post">
                             <button class="btn btn-primary">Vote for me!</button>
                             <input type="hidden" name="id" value="@image.Id" />
-                        </div>
+                        </form>
                     </div>
                 </div>
             }
         </div>
-    </form>
 </div>

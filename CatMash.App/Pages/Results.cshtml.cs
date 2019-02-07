@@ -13,6 +13,9 @@ namespace CatMash.App.Pages
         [BindProperty]
         public IEnumerable<IImage> Images { get; private set; }
 
+        [BindProperty]
+        public int MaxVotes { get; private set; }
+
         public ResultsModel(IImageService imageService)
         {
             _imageService = imageService;
@@ -20,6 +23,7 @@ namespace CatMash.App.Pages
         public void OnGet()
         {
             Images = _imageService.Images.OrderByDescending(i => i.Votes);
+            MaxVotes = Images.First().Votes;
         }
     }
 }

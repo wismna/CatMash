@@ -15,8 +15,9 @@
             </div>
         </div>
         <div class="col">
-            <div class="card" style="width: 18rem;">
-                Votes: @image.Votes
+            Votes: @image.Votes
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: @((float)image.Votes/(float)Model.MaxVotes * 100.0)%" aria-valuenow="@image.Votes" aria-valuemin="0" aria-valuemax="@Model.MaxVotes"></div>
             </div>
         </div>
     </div>
