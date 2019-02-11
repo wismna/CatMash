@@ -1,5 +1,4 @@
-﻿using CatMash.API.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CatMash.App.Interfaces
 {

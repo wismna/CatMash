@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using CatMash.API.Interfaces;
+﻿using System.Collections.Generic;
 
 namespace CatMash.App.Interfaces
 {

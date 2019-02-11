@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using CatMash.App.Interfaces;
 using CatMash.App.Services;
 using Microsoft.AspNetCore.Builder;
@@ -29,7 +33,7 @@ namespace CatMash.App
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddSingleton<IImageService, ImageService>();
             services.AddTransient<IVotingService, VotingService>();
@@ -45,11 +49,8 @@ namespace CatMash.App
             else
             {
                 app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                //app.UseHsts();
             }
 
-            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
