@@ -31,9 +31,8 @@ namespace CatMash.Tests
         public void TestVotingServiceIncreaseVoteCount()
         {
             var votingService = new VotingService(_imageService);
-            var images = votingService.GetImagesToCompare().ToList();
-            votingService.Vote(images[0].Id);
-            Assert.Equal(1, images[0].Votes);
+            votingService.Vote(_images[0].Id);
+            Assert.Equal(1, _images[0].Votes);
         }
     }
 }
