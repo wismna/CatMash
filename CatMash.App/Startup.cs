@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CatMash.App.Interfaces;
 using CatMash.App.Services;
 using Microsoft.AspNetCore.Builder;
