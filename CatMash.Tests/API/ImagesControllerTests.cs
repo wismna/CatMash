@@ -1,25 +1,26 @@
 ﻿using System;
-using Xunit;
+using System.Threading.Tasks;
 using CatMash.API.Controllers;
 using Microsoft.Extensions.Configuration;
 using Moq;
+using Xunit;
 
-namespace CatMash.Tests
+namespace CatMash.Tests.API
 {
-    public class ApiTests
+    public class ImagesControllerTests
     {
         [Fact]
-        public void TestGetImagesWithNoUrlFails()
+        public async Task TestGetImagesWithNoUrlFails()
         {
             var apiController = new ImagesController(Mock.Of<IConfiguration>());
-            Assert.ThrowsAsync<UriFormatException>(async () => await apiController.GetImages());
+            await Assert.ThrowsAsync<InvalidOperationException>(async () => await apiController.GetImages());
         }
 
         [Fact]
-        public void TestGetImagesWithValidUrlSucceeds()
+        public async Task TestGetImagesWithValidUrlSucceeds()
         {
             var apiController = new ImagesController(Mock.Of<IConfiguration>(c => c["SourceImagesUrl"] == "https://latelier.co/data/cats.json"));
-            var images = apiController.GetImages().Result;
+            var images = await apiController.GetImages();
             Assert.NotEmpty(images);
         }
     }

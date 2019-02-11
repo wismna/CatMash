@@ -6,14 +6,14 @@ using CatMash.App.Services;
 using Moq;
 using Xunit;
 
-namespace CatMash.Tests
+namespace CatMash.Tests.App
 {
-    public class AppTests
+    public class VotingServiceTests
     {
-        private readonly List<IImage> _images = new List<IImage>() {new Image {Id = "id1"}, new Image {Id = "id2"}, new Image { Id = "id3" }, new Image { Id = "id4" } };
+        private readonly List<IImage> _images = new List<IImage> {new Image {Id = "id1"}, new Image {Id = "id2"}, new Image { Id = "id3" }, new Image { Id = "id4" } };
         private readonly IImageService _imageService;
 
-        public AppTests()
+        public VotingServiceTests()
         {
             _imageService = Mock.Of<IImageService>(i => i.Images == _images);
         }
