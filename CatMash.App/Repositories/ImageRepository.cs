@@ -2,18 +2,18 @@
 using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Threading.Tasks;
-using CatMash.App.Interfaces;
-using CatMash.App.Models;
+using CatMash.Business;
+using CatMash.Entities;
 using Microsoft.Extensions.Configuration;
 
-namespace CatMash.App.Services
+namespace CatMash.App.Repositories
 {
-    public class ImageService: IImageService
+    public class ImageRepository: IImageRepository
     {
         private readonly string _apiUrl;
-        private IEnumerable<IImage> _images;
+        private IEnumerable<Image> _images;
 
-        public IEnumerable<IImage> Images
+        public IEnumerable<Image> Images
         {
             get
             {
@@ -27,18 +27,18 @@ namespace CatMash.App.Services
             }
         }
 
-        public ImageService(IConfiguration config)
+        public ImageRepository(IConfiguration config)
         {
             _apiUrl = config["ApiUrl"];
         }
 
-        private async Task<IEnumerable<IImage>> GetImagesAsync()
+        private async Task<IEnumerable<Image>> GetImagesAsync()
         {
             using (var client = new HttpClient())
             {
-                var serializer = new DataContractJsonSerializer(typeof(IEnumerable<Image>));
+                var serializer = new DataContractJsonSerializer(typeof(ImageData));
                 var streamTask = client.GetStreamAsync(_apiUrl);
-                return serializer.ReadObject(await streamTask) as IEnumerable<Image>;
+                return (serializer.ReadObject(await streamTask) as ImageData)?.Images;
             }
         }
     }

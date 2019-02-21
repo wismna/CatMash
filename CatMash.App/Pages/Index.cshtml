@@ -1,8 +1,5 @@
 ﻿@page
-@using CatMash.App.Interfaces
 @model IndexModel
-@inject IImageService ImageService
-@inject IVotingService VotingService
 @{
     ViewData["Title"] = "Home page";
 }
@@ -13,7 +10,7 @@
 
 <div class="container-fluid">
     <div class="card-deck text-center">
-        @foreach (var image in VotingService.GetImagesToCompare())
+        @foreach (var image in Model.Images)
         {
             <div class="card" style="width: 18rem;">
                 <div class="card-body">

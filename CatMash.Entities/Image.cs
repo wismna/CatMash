@@ -1,15 +1,21 @@
 ﻿using System.Runtime.Serialization;
-using CatMash.API.Interfaces;
 
-namespace CatMash.API.Model
+namespace CatMash.Entities
 {
     [DataContract]
-    public class Image: IImage
+    public class Image
     {
         [DataMember(Name = "url")]
         public string Url { get; set; }
 
         [DataMember(Name = "id")]
         public string Id { get; set; }
+
+        public int Votes { get; set; }
+
+        public void IncreaseVotes()
+        {
+            Votes ++;
+        }
     }
 }

@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using CatMash.API.Model;
+using CatMash.Entities;
 
-namespace CatMash.API.Repositories
+namespace CatMash.App.Repositories
 {
     [DataContract]
-    public class ImageRepository
+    public class ImageData
     {
         [DataMember(Name = "images")]
-        public List<Image> Images { get; set; }
+        public IEnumerable<Image> Images { get; set; }
     }
 }

@@ -1,5 +1,5 @@
-using CatMash.App.Interfaces;
-using CatMash.App.Services;
+using CatMash.App.Repositories;
+using CatMash.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,8 +31,7 @@ namespace CatMash.App
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddSingleton<IImageService, ImageService>();
-            services.AddTransient<IVotingService, VotingService>();
+            services.AddSingleton<IImageRepository, ImageRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
