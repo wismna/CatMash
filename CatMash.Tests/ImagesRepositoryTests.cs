@@ -11,8 +11,7 @@ namespace CatMash.Tests
         [Fact]
         public void TestGetImagesWithNoUrlFails()
         {
-            var imageRepository = new ImageRepository(Mock.Of<IConfiguration>());
-            Assert.Throws<AggregateException>(() => imageRepository.Images);
+            Assert.Throws<AggregateException>(() => new ImageRepository(Mock.Of<IConfiguration>()));
         }
 
         [Fact]

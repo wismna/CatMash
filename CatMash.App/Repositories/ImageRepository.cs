@@ -9,34 +9,20 @@ namespace CatMash.App.Repositories
 {
     public class ImageRepository: IImageRepository
     {
-        private readonly string _apiUrl;
-        private IEnumerable<Image> _images;
-
-        public IEnumerable<Image> Images
-        {
-            get
-            {
-                if (_images == null)
-                {
-                    var task = Task.Run(async () => await GetImagesAsync());
-                    _images = task.Result;
-                }
-
-                return _images;
-            }
-        }
+        public IEnumerable<Image> Images { get; }
 
         public ImageRepository(IConfiguration config)
         {
-            _apiUrl = config["ApiUrl"];
+            var task = Task.Run(async () => await GetImagesAsync(config["ApiUrl"]));
+            Images = task.Result;
         }
 
-        private async Task<IEnumerable<Image>> GetImagesAsync()
+        private async Task<IEnumerable<Image>> GetImagesAsync(string url)
         {
             using (var client = new HttpClient())
             {
                 var serializer = new DataContractJsonSerializer(typeof(ImageData));
-                var streamTask = client.GetStreamAsync(_apiUrl);
+                var streamTask = client.GetStreamAsync(url);
                 return (serializer.ReadObject(await streamTask) as ImageData)?.Images;
             }
         }
