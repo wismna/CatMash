@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using CatMash.Entities;
 
-namespace CatMash.App.Repositories
+namespace CatMash.Infrastructure
 {
     [DataContract]
     public class ImageData

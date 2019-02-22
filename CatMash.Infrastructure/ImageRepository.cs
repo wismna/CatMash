@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using CatMash.Entities;
 using Microsoft.Extensions.Configuration;
 
-namespace CatMash.App.Repositories
+namespace CatMash.Infrastructure
 {
     public class ImageRepository: IImageRepository
     {

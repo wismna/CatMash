@@ -7,9 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatMash.App", "CatMash.App\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatMash.Tests", "CatMash.Tests\CatMash.Tests.csproj", "{2B0A1CC1-2711-4437-A900-0414863CDAE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatMash.Entities", "CatMash.Entities\CatMash.Entities.csproj", "{2A038D8A-5053-4B9D-9EFD-F74B2BC0BF40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatMash.Entities", "CatMash.Entities\CatMash.Entities.csproj", "{2A038D8A-5053-4B9D-9EFD-F74B2BC0BF40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatMash.Business", "CatMash.Business\CatMash.Business.csproj", "{09C9AC96-4364-42BB-B053-3ABA4FA47AEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatMash.Business", "CatMash.Business\CatMash.Business.csproj", "{09C9AC96-4364-42BB-B053-3ABA4FA47AEB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7C19AC23-599A-435C-B586-97AD9FF586D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatMash.Infrastructure", "CatMash.Infrastructure\CatMash.Infrastructure.csproj", "{4B9850FF-CCEC-41CF-B625-13E985A01011}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,17 @@ Global
 		{09C9AC96-4364-42BB-B053-3ABA4FA47AEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09C9AC96-4364-42BB-B053-3ABA4FA47AEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09C9AC96-4364-42BB-B053-3ABA4FA47AEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B9850FF-CCEC-41CF-B625-13E985A01011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B9850FF-CCEC-41CF-B625-13E985A01011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B9850FF-CCEC-41CF-B625-13E985A01011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B9850FF-CCEC-41CF-B625-13E985A01011}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A038D8A-5053-4B9D-9EFD-F74B2BC0BF40} = {7C19AC23-599A-435C-B586-97AD9FF586D9}
+		{09C9AC96-4364-42BB-B053-3ABA4FA47AEB} = {7C19AC23-599A-435C-B586-97AD9FF586D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3D28124-6934-4E2B-9F10-59E21E0BE8FF}

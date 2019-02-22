@@ -1,5 +1,5 @@
 ﻿using System;
-using CatMash.App.Repositories;
+using CatMash.Infrastructure;
 using Microsoft.Extensions.Configuration;
 using Moq;
 using Xunit;
