@@ -17,6 +17,7 @@ namespace CatMash.App.Pages
 
             var interactor = new RequestVotingImagesInteractor();
             var response = interactor.Handle(new VotingRequestMessage {Images = _imageRepository.Images});
+            // TODO: show a message indicating that there are not enough images
             if (response != null) Images = response.Images;
         }
         

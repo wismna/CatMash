@@ -8,7 +8,7 @@ namespace CatMash.Business
     {
         public VotingResponseMessage Handle(VotingRequestMessage message)
         {
-            if (message.Images == null) return new VotingResponseMessage();
+            if (message.Images == null || message.Images.Count() < 2) return new VotingResponseMessage();
 
             var count = message.Images.Count();
             var array = message.Images.ToArray();

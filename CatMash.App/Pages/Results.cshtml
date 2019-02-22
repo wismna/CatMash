@@ -17,7 +17,7 @@
         <div class="col">
             Votes: @image.Votes
             <div class="progress">
-                <div class="progress-bar" role="progressbar" style="width: @((float)image.Votes/(float)Model.MaxVotes * 100.0)%" aria-valuenow="@image.Votes" aria-valuemin="0" aria-valuemax="@Model.MaxVotes"></div>
+                <div class="progress-bar" role="progressbar" style="width: @((float)image.Votes/Model.MaxVotes * 100.0)%" aria-valuenow="@image.Votes" aria-valuemin="0" aria-valuemax="@Model.MaxVotes"></div>
             </div>
         </div>
     </div>
